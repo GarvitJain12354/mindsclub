@@ -1,6 +1,7 @@
 import React from "react";
 import BookingBar from "./BookingBar";
 import Navbar from "./Navbar";
+import MaxWidthWrapper from "./layout/MaxWidthWrapper";
 
 const Hero = () => {
   return (
@@ -22,27 +23,29 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto px-8">
-          <div className="max-w-2xl text-center sm:text-left pt-36 md:pt-0">
-            <h1 className="text-white text-5xl max-md:text-3xl leading-tight font-satoshi font-black">
-              Goa Edition
-            </h1>
-            <h2 className="text-white text-5xl max-md:text-3xl leading-tight mb-2 md:mb-8 font-satoshi font-bold">
-              Branding & Beyond.
-            </h2>
-            <p className="text-white text-lg  max-md:text-base leading-relaxed mb-5 max-w-xl font-satoshi font-medium">
-              One beach, three skincare brands, 25 creative minds
-              <br className="hidden lg:block" />
-              and four unforgettable days
-            </p>
-            <div className="flex flex-wrap gap-2 md:gap-6 justify-center sm:justify-start">
-              <button className="bg-[#FFFE81] hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 text-base max-md:text-xs">
-                Secure Your Spot
-              </button>
-              <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 text-base max-md:text-xs flex items-center">
-                <span className="mr-3">▶</span>Watch Trailer
-              </button>
+          <MaxWidthWrapper className="h-full py-10">
+            <div className="max-w-2xl text-center sm:text-left pt-36 md:pt-0">
+              <h1 className="text-white text-5xl max-md:text-3xl leading-tight font-satoshi font-black">
+                Goa Edition
+              </h1>
+              <h2 className="text-white text-5xl max-md:text-3xl leading-tight mb-2 md:mb-8 font-satoshi font-bold">
+                Branding & Beyond.
+              </h2>
+              <p className="text-white text-lg  max-md:text-base leading-relaxed mb-5 max-w-xl font-satoshi font-medium">
+                One beach, three skincare brands, 25 creative minds
+                <br className="hidden lg:block" />
+                and four unforgettable days
+              </p>
+              <div className="flex flex-wrap gap-2 md:gap-6 justify-center sm:justify-start">
+                <button className="bg-[#FFFE81] hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 text-base max-md:text-xs">
+                  Secure Your Spot
+                </button>
+                <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 text-base max-md:text-xs flex items-center">
+                  <span className="mr-3">▶</span>Watch Trailer
+                </button>
+              </div>
             </div>
-          </div>
+          </MaxWidthWrapper>
         </div>
       </div>
 

@@ -308,27 +308,29 @@ export default function SkincareWorkshop() {
     <div
       className="
         /* xs: 0-425px (default) */
-        min-h-[40vh] pt-0
+        min-h-[40vh] pt-10
         /* sm: 426-767px */
         sm:min-h-[50vh] sm:pt-4
         /* md: 768-1023px */
-        md:min-h-[70vh] md:pt-10
+        md:min-h-[70vh] md:pt-14
         /* lg: 1024-1279px */
-        lg:min-h-[80vh] lg:pt-20
+        lg:min-h-[80vh] lg:pt-16
         /* xl: 1280-1535px */
-        xl:min-h-screen xl:pt-28
+        xl:min-h-screen xl:pt-20
         /* 2xl: 1536px+ */
-        2xl:min-h-screen 2xl:pt-32
+        2xl:min-h-screen 2xl:pt-24
         font-sans
+        
       "
     >
       {/* Top Section */}
-      <div className="pl-0 md:pl-10 py-12 w-full">
+
+      <div className="pl-0 md:pl-10  w-full ">
         <div className="mb-16 text-center md:text-left">
           <h1 className="text-4xl font-satoshi font-bold text-gray-900 mb-3 tracking-tight">
             About the workshop
           </h1>
-          <p className="max-w-full max-md:w-[80%] max-md:text-center max-md:font-semibold  md:max-w-[250px] mx-auto md:mx-0 text-gray-800 text-sm font-satoshi font-normal">
+          <p className="max-w-full max-md:w-[80%] max-md:text-center font-semibold  mx-auto md:mx-0 text-gray-800  font-satoshi text-xl w-[30%]">
             A 4-day creative sprint to craft your own skincare brand
           </p>
         </div>
@@ -351,7 +353,7 @@ export default function SkincareWorkshop() {
                   onClick={() => handleStepChange(index)}
                   disabled={isTransitioning}
                   className={`
-                    block w-full text-left px-0 py-4 text-2xl md:text-3xl font-satoshi font-medium transition-all duration-300
+                    block w-full text-left px-0 py-4 text-2xl md:text-4xl font-satoshi font-extrabold transition-all duration-300
                     ${
                       index === activeStep
                         ? "text-gray-900 font-bold"
@@ -368,10 +370,10 @@ export default function SkincareWorkshop() {
           <div
             className="
                 absolute
-                top-0 right-12
+                top-5 right-12
                 w-fit
                
-                z-50
+                z-10
                 max-md:top-0
                 max-md:right-0
                 max-md:px-2
@@ -405,7 +407,7 @@ export default function SkincareWorkshop() {
             </button>
           </div>
           {/* Right Content Area */}
-          <div className="flex-1 flex-col relative pl-0 w-full  justify-center items-center">
+          <div className="flex-1 flex-col relative pl-10 max-md:pl-0 w-full  justify-center items-center">
             {/* Navigation Arrows */}
 
             {/* Slider Container */}
@@ -422,7 +424,7 @@ export default function SkincareWorkshop() {
               {/* Centered Container */}
               <div className="w-full">
                 {/* All Slides Container */}
-                <div className="relative flex w-full flex-nowrap items-end h-[80vh] max-md:h-[50vh]">
+                <div className="relative flex w-full flex-nowrap items-end h-[70vh] max-md:h-[50vh]">
                   {workshopSteps.map((step, index) => {
                     const slideStyle = getSlideTransform(index);
                     const isActive = index === activeStep;
@@ -430,7 +432,7 @@ export default function SkincareWorkshop() {
                       <div
                         key={step.id}
                         ref={(el) => (imgRefs.current[index] = el)}
-                        className={`h-[100%] Pimg shrink-0 w-[60vw] max-md:w-[80%] max-md:p-2  cursor-pointer transform p-5`}
+                        className={`h-[100%] Pimg shrink-0 w-[50vw] max-md:w-[80%] max-md:p-2  cursor-pointer transform p-5`}
                         // style={slideStyle}
 
                         onClick={() => handleStepChange(index)}

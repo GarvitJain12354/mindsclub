@@ -237,7 +237,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`z-50 h-20 transition-all duration-300 ease-in-out ${
+      className={`z-50 transition-all duration-300 ease-in-out ${
         isScrolled ? "top-0 px-0 md:px-0 fixed" : "top-10 px-2 md:px-60 fixed"
       } w-full`}
     >
@@ -261,7 +261,7 @@ const Navbar = () => {
               <img
                 src={"/images/logo-white.svg"}
                 alt="Logo Label"
-                className="w-36 h-16"
+                className="w-36"
               />
             </Link>
           </div>

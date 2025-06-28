@@ -1,18 +1,18 @@
-import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import DayOneSection1 from './HorizontalScroll/DayOneSection1';
-import DayOneSection2 from './HorizontalScroll/DayOneSection2';
-import DayOneSection3 from './HorizontalScroll/DayOneSection3';
-import DayTwoSection1 from './HorizontalScroll/DayTwoSection1';
-import DayTwoSection2 from './HorizontalScroll/DayTwoSection2';
+import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import DayOneSection1 from "./HorizontalScroll/DayOneSection1";
+import DayOneSection2 from "./HorizontalScroll/DayOneSection2";
+import DayOneSection3 from "./HorizontalScroll/DayOneSection3";
+import DayTwoSection1 from "./HorizontalScroll/DayTwoSection1";
+import DayTwoSection2 from "./HorizontalScroll/DayTwoSection2";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const WorkshopOverview = () => {
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [screenSize, setScreenSize] = useState('lg');
+  const [screenSize, setScreenSize] = useState("lg");
 
   // Detect screen size and mobile
   useEffect(() => {
@@ -20,31 +20,31 @@ const WorkshopOverview = () => {
       const width = window.innerWidth;
       const mobile = width < 768;
       setIsMobile(mobile);
-      
-      if (width < 475) setScreenSize('xs');
-      else if (width < 640) setScreenSize('sm');
-      else if (width < 768) setScreenSize('md');
-      else if (width < 1024) setScreenSize('lg');
-      else if (width < 1280) setScreenSize('xl');
-      else setScreenSize('2xl');
+
+      if (width < 475) setScreenSize("xs");
+      else if (width < 640) setScreenSize("sm");
+      else if (width < 768) setScreenSize("md");
+      else if (width < 1024) setScreenSize("lg");
+      else if (width < 1280) setScreenSize("xl");
+      else setScreenSize("2xl");
     };
 
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   useLayoutEffect(() => {
     if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      const horizontalSections = gsap.utils.toArray('.horizontal-section');
+      const horizontalSections = gsap.utils.toArray(".horizontal-section");
       const firstSection = horizontalSections[0];
-      
+
       if (!horizontalSections.length) return;
 
       // Clear any existing ScrollTriggers
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -56,16 +56,20 @@ const WorkshopOverview = () => {
             snapTo: (progress) => {
               const introProgress = 0.25;
               if (progress < introProgress) return 0;
-              const sectionProgress = (progress - introProgress) / (1 - introProgress);
-              const snapPoint = Math.round(sectionProgress * (horizontalSections.length - 1)) / (horizontalSections.length - 1);
+              const sectionProgress =
+                (progress - introProgress) / (1 - introProgress);
+              const snapPoint =
+                Math.round(sectionProgress * (horizontalSections.length - 1)) /
+                (horizontalSections.length - 1);
               return introProgress + snapPoint * (1 - introProgress);
             },
             duration: { min: 0.2, max: isMobile ? 0.4 : 0.6 },
           },
           end: () => {
-            const containerWidth = containerRef.current?.offsetWidth || window.innerWidth;
+            const containerWidth =
+              containerRef.current?.offsetWidth || window.innerWidth;
             const multiplier = isMobile ? 1.5 : 1.3;
-            return '+=' + containerWidth * multiplier;
+            return "+=" + containerWidth * multiplier;
           },
           invalidateOnRefresh: true,
         },
@@ -73,22 +77,21 @@ const WorkshopOverview = () => {
 
       // First section expansion animation
       tl.to(firstSection, {
-        width: '100vw',
-        height: '100vh',
-        borderRadius: '0rem',
-        marginLeft: '0',
-        marginRight: '0',
+        width: "100vw",
+        height: "100vh",
+        borderRadius: "0rem",
+        marginLeft: "0",
+        marginRight: "0",
         duration: 1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
       // Horizontal scroll animation
       tl.to(horizontalSections, {
         xPercent: -100 * (horizontalSections.length - 1),
         duration: 3,
-        ease: 'none',
+        ease: "none",
       });
-
     }, containerRef);
 
     return () => {
@@ -103,23 +106,24 @@ const WorkshopOverview = () => {
       ScrollTrigger.refresh();
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <>
       <section className="bg-white min-h-[5vh] md:min-h-[10vh] flex items-center justify-center md:items-start md:justify-start">
         <div className="max-w-[1200px] w-full px-4 sm:px-6 md:px-8 lg:pl-10">
-          <h2 className="font-satoshi font-bold text-gray-900 text-2xl sm:text-3xl md:text-[clamp(1.2rem,4vw,2.2rem)] mb-2 tracking-[.02em] text-center md:text-left">
+          <h2 className="text-4xl font-satoshi font-bold text-gray-900 mb-3 tracking-tight">
             Workshop Overview
           </h2>
           <p className="font-satoshi font-medium text-gray-950 text-sm md:text-[clamp(0.8rem,2.5vw,1rem)] leading-[1.6] max-w-[60%] sm:max-w-[400px] md:max-w-[400px] m-0 text-center sm:text-center md:text-left mx-auto md:mx-0">
-            Goa gives you the space to think louder, live slower, and create deeper.
+            Goa gives you the space to think louder, live slower, and create
+            deeper.
           </p>
         </div>
       </section>
-      
+
       <div className="w-screen min-h-screen bg-white overflow-hidden">
         <main id="container" ref={containerRef}>
           <section className="horizontal-section first-section">
@@ -142,29 +146,29 @@ const WorkshopOverview = () => {
 
       <style jsx>{`
         @font-face {
-          font-family: 'Satoshi';
-          src: url('/src/assets/Satoshi-Regular.woff2') format('woff2');
+          font-family: "Satoshi";
+          src: url("/src/assets/Satoshi-Regular.woff2") format("woff2");
           font-weight: 400;
           font-style: normal;
           font-display: swap;
         }
         @font-face {
-          font-family: 'Satoshi';
-          src: url('/src/assets/Satoshi-Bold.woff2') format('woff2');
+          font-family: "Satoshi";
+          src: url("/src/assets/Satoshi-Bold.woff2") format("woff2");
           font-weight: 700;
           font-style: normal;
           font-display: swap;
         }
         @font-face {
-          font-family: 'Satoshi';
-          src: url('/src/assets/Satoshi-Black.woff2') format('woff2');
+          font-family: "Satoshi";
+          src: url("/src/assets/Satoshi-Black.woff2") format("woff2");
           font-weight: 900;
           font-style: normal;
           font-display: swap;
         }
         @font-face {
-          font-family: 'Satoshi';
-          src: url('/src/assets/Satoshi-Light.woff2') format('woff2');
+          font-family: "Satoshi";
+          src: url("/src/assets/Satoshi-Light.woff2") format("woff2");
           font-weight: 300;
           font-style: normal;
           font-display: swap;
@@ -207,7 +211,7 @@ const WorkshopOverview = () => {
         }
 
         .heading {
-          font-family: 'Oswald', sans-serif;
+          font-family: "Oswald", sans-serif;
           font-size: clamp(2rem, 6vw, 8rem);
           font-weight: 300;
           color: white;
@@ -218,7 +222,7 @@ const WorkshopOverview = () => {
         }
 
         .horizontal-section:not(:first-child)::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
