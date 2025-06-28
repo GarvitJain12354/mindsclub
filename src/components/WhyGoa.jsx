@@ -591,10 +591,9 @@ const WhyGoa = () => {
 
               {/* Content - Bottom Left Aligned */}
               <div
-                className="absolute bottom-0 left-0 p-6 z-10"
+                className="absolute bottom-0 left-0 p-6 z-10 flex flex-col items-start"
                 style={{
-                  transform:
-                    hoveredCard === index ? "translateX(8px)" : "translateX(0)",
+                
                   transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
                 }}
               >
