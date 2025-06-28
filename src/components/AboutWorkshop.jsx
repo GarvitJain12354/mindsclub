@@ -328,7 +328,7 @@ export default function SkincareWorkshop() {
           <h1 className="text-4xl font-satoshi font-bold text-gray-900 mb-3 tracking-tight">
             About the workshop
           </h1>
-          <p className="max-w-full md:max-w-[250px] mx-auto md:mx-0 text-gray-800 text-sm font-satoshi font-normal">
+          <p className="max-w-full max-md:w-[80%] max-md:text-center max-md:font-semibold  md:max-w-[250px] mx-auto md:mx-0 text-gray-800 text-sm font-satoshi font-normal">
             A 4-day creative sprint to craft your own skincare brand
           </p>
         </div>
@@ -341,7 +341,7 @@ export default function SkincareWorkshop() {
                max-md:hidden
                flex flex-col
              
-              flex-shrink-0 relative z-30 w-[20%] items-end justify-center
+              flex-shrink-0 relative z-30 w-[20%] items-center justify-center
             "
           >
             <nav className="space-y-1">
@@ -372,7 +372,9 @@ export default function SkincareWorkshop() {
                 w-fit
                
                 z-50
-                max-md:-top-8
+                max-md:top-0
+                max-md:right-0
+                max-md:px-2
                 flex gap-2 sm:gap-3 lg:gap-4
                 
               "
@@ -381,7 +383,7 @@ export default function SkincareWorkshop() {
               onClick={handlePrevious}
               disabled={isTransitioning}
               className="
-                  w-9 h-9 md:w-12 md:h-12 lg:w-12 lg:h-12
+                  w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12
                   rounded-full border border-gray-200 bg-white
                   hover:bg-gray-50 shadow-sm disabled:opacity-50
                   flex items-center justify-center transition-colors
@@ -393,7 +395,7 @@ export default function SkincareWorkshop() {
               onClick={handleNext}
               disabled={isTransitioning}
               className="
-                  w-9 h-9 md:w-12 md:h-12 lg:w-12 lg:h-12
+                  w-7 h-7 md:w-12 md:h-12 lg:w-12 lg:h-12
                   rounded-full border border-gray-200 bg-white
                   hover:bg-gray-50 shadow-sm disabled:opacity-50
                   flex items-center justify-center transition-colors
@@ -420,7 +422,7 @@ export default function SkincareWorkshop() {
               {/* Centered Container */}
               <div className="w-full">
                 {/* All Slides Container */}
-                <div className="relative flex w-full flex-nowrap items-end h-[80vh] ">
+                <div className="relative flex w-full flex-nowrap items-end h-[80vh] max-md:h-[50vh]">
                   {workshopSteps.map((step, index) => {
                     const slideStyle = getSlideTransform(index);
                     const isActive = index === activeStep;
@@ -428,7 +430,7 @@ export default function SkincareWorkshop() {
                       <div
                         key={step.id}
                         ref={(el) => (imgRefs.current[index] = el)}
-                        className={`h-[100%] Pimg shrink-0 w-[60vw] max-md:w-full  cursor-pointer transform p-5`}
+                        className={`h-[100%] Pimg shrink-0 w-[60vw] max-md:w-[80%] max-md:p-2  cursor-pointer transform p-5`}
                         // style={slideStyle}
 
                         onClick={() => handleStepChange(index)}
