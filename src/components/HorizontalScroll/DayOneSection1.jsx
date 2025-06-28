@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const DayOneSection1 = () => {
   return (
@@ -9,15 +9,13 @@ const DayOneSection1 = () => {
         <div className="flex justify-between items-start px-4 pt-24 pb-2">
           {/* Left: Day Title */}
           <div>
-            <h1 className="text-xl font-bold text-black mb-1">
-              DAY ONE
-            </h1>
+            <h1 className="text-xl font-bold text-black mb-1">DAY ONE</h1>
             <div className="flex items-center gap-2 text-xs text-black font-medium">
               <span className="rotate-[-45deg] text-sm font-bold">✈</span>
               <span>The Arrival</span>
             </div>
           </div>
-          
+
           {/* Right: Pagination Circles */}
           <div className="flex gap-2 mt-1">
             <div className="w-2 h-2 rounded-full bg-black"></div>
@@ -29,7 +27,6 @@ const DayOneSection1 = () => {
 
         {/* Main Content Area - Single Column */}
         <div className="w-full h-full flex-1 flex flex-row items-center justify-between pb-16">
-          
           {/* Left - Welcome Drink Section */}
           <div className="w-1/2 h-full flex flex-col items-start justify-start pt-10 pl-2">
             <img
@@ -39,7 +36,8 @@ const DayOneSection1 = () => {
             />
             <p className="max-w-[200px] text-start font-medium text-sm text-black leading-relaxed">
               Be Greeted with a<br />
-              Refreshing Welcome<br />
+              Refreshing Welcome
+              <br />
               drink.
             </p>
           </div>
@@ -101,11 +99,13 @@ const DayOneSection1 = () => {
               DAY ONE
             </h1>
             <div className="flex items-center gap-2 text-base lg:text-lg text-black font-medium">
-              <span className="rotate-[-45deg] text-xl lg:text-2xl font-bold">✈</span>
+              <span className="rotate-[-45deg] text-xl lg:text-2xl font-bold">
+                ✈
+              </span>
               <span>The Arrival</span>
             </div>
           </div>
-          
+
           {/* Right: Pagination Circles */}
           <div className="flex gap-3 mt-0 py-3 lg:py-4 xl:py-5">
             <div className="w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-black"></div>
@@ -117,7 +117,6 @@ const DayOneSection1 = () => {
 
         {/* Main Content Area */}
         <div className="flex-1 flex justify-between items-center gap-8 lg:gap-10 xl:gap-12 mb-12 lg:mb-16">
-          
           {/* Left: Beach Intro Session */}
           <div className="w-1/2 flex flex-col items-end">
             <div className="flex flex-col items-center pr-6 lg:pr-8 xl:pr-16 pb-6 lg:pb-8 xl:pb-16 mt-6 lg:mt-8 xl:mt-14">
@@ -141,7 +140,8 @@ const DayOneSection1 = () => {
                 className="w-[150px] h-[170px] lg:w-[170px] lg:h-[190px] xl:w-[200px] xl:h-[220px] 2xl:w-[220px] 2xl:h-[250px] rounded-xl object-cover shadow-lg"
               />
               <p className="text-center font-medium text-base lg:text-lg xl:text-xl text-black max-w-[180px] lg:max-w-[200px] xl:max-w-[240px] mt-4">
-                Eve chit-chat with<br />
+                Eve chit-chat with
+                <br />
                 new friends.
               </p>
             </div>

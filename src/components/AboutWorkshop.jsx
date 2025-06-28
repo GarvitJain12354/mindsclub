@@ -373,7 +373,7 @@ export default function SkincareWorkshop() {
                 top-5 right-12
                 w-fit
                
-                z-10
+                z-30
                 max-md:top-0
                 max-md:right-0
                 max-md:px-2

@@ -22,8 +22,12 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 h-full flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-8">
-          <MaxWidthWrapper className="h-full py-10">
+        <div
+          className={`w-full absolute  px-8  max-md:left-0 ${
+            window.innerWidth > 1500 ? "left-32" : "left-28"
+          }`}
+        >
+          <MaxWidthWrapper className="h-full">
             <div className="max-w-2xl text-center sm:text-left pt-36 md:pt-0">
               <h1 className="text-white text-5xl max-md:text-3xl leading-tight font-satoshi font-black">
                 Goa Edition

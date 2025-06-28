@@ -116,10 +116,10 @@ const WhyGoa = () => {
     imgRefs.current.forEach((el, index) => {
       gsap.to(el, {
         xPercent: -i * 100,
-        height: index === i ? "100%" : "80%",
+        height: index === i ? "100%" : "100%",
         // scale: index === i ? 1 : 0.75,
-        duration: 0.7,
-        ease: "Expo.ease",
+        duration: 0.5,
+        ease: "Expo.easeInOut",
       });
     });
   };
@@ -422,10 +422,11 @@ const WhyGoa = () => {
         <div
           className="
                 absolute
-                top-5 right-12
+                top-0 right-12
                 w-fit
                 z-30
-                max-md:top-0
+               
+                max-md:-top-10
                 max-md:right-0
                 max-md:px-2
                 flex gap-2 sm:gap-3 lg:gap-4
@@ -484,7 +485,7 @@ const WhyGoa = () => {
                     <div
                       key={step.id}
                       ref={(el) => (imgRefs.current[index] = el)}
-                      className={`h-[100%] Pimg shrink-0 w-[50vw] max-md:w-[80%] max-md:p-2  cursor-pointer transform p-5`}
+                      className={`h-[100%] Pimg shrink-0 w-[90%] max-md:p-2  cursor-pointer transform p-5`}
                       // style={slideStyle}
 
                       onClick={() => handleStepChange(index)}
@@ -593,7 +594,6 @@ const WhyGoa = () => {
               <div
                 className="absolute bottom-0 left-0 p-6 z-10 flex flex-col items-start"
                 style={{
-                
                   transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
                 }}
               >
