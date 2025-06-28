@@ -368,11 +368,11 @@ export default function SkincareWorkshop() {
           <div
             className="
                 absolute
-                top-0 right-0
-                w-40
-                
+                top-0 right-12
+                w-fit
+               
                 z-50
-                
+                max-md:-top-8
                 flex gap-2 sm:gap-3 lg:gap-4
                 
               "
@@ -420,7 +420,7 @@ export default function SkincareWorkshop() {
               {/* Centered Container */}
               <div className="w-full">
                 {/* All Slides Container */}
-                <div className="relative flex w-full flex-nowrap items-end h-[75vh] gap-10">
+                <div className="relative flex w-full flex-nowrap items-end h-[75vh] ">
                   {workshopSteps.map((step, index) => {
                     const slideStyle = getSlideTransform(index);
                     const isActive = index === activeStep;
@@ -428,7 +428,7 @@ export default function SkincareWorkshop() {
                       <div
                         key={step.id}
                         ref={(el) => (imgRefs.current[index] = el)}
-                        className={`h-[100%] Pimg shrink-0 w-[50vw]  cursor-pointer transform`}
+                        className={`h-[100%] Pimg shrink-0 w-[50vw] max-md:w-full  cursor-pointer transform p-5`}
                         // style={slideStyle}
 
                         onClick={() => handleStepChange(index)}
